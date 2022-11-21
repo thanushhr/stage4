@@ -17,7 +17,7 @@ pipeline {
 	    agent {label 'node1'}
       steps {
         echo "This is stage 2" 
-	echo ${BUILD_NUMBER}
+	${BUILD_NUMBER}
         sh 'sleep 5; exit 0'
       }  
     }  
@@ -26,7 +26,7 @@ pipeline {
 	    agent {label 'node1'}
       steps {
         echo "This is stage3" 
-	echo ${BUILD_NUMBER}
+	${BUILD_NUMBER}
         sh 'sleep 5; exit 0'
 	      }
       }
