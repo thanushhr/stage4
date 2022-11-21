@@ -15,18 +15,24 @@ pipeline {
     parallel {
     stage ('STAGE2') {
 	    agent {label 'node1'}
+	    environment {
+		$BUILD_NUMBER
+	}
       steps {
         echo "This is stage 2" 
-	$env:BUILD_NUMBER
+	echo $BUILD_NUMBER
         sh 'sleep 5; exit 0'
       }  
     }  
     
     stage ('STAGE3') {
 	    agent {label 'node1'}
+	    environment {
+		$BUILD_NUMBER
+	}
       steps {
         echo "This is stage3" 
-	$env:BUILD_NUMBER
+	echo $BUILD_NUMBER
         sh 'sleep 5; exit 0'
 	      }
       }
