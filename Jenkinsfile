@@ -12,9 +12,9 @@ pipeline {
       }  
     } 
    stage ('PARALLEL STAGES 2 & 3') {
-	   agent { label 'node1' }
     parallel {
     stage ('STAGE2') {
+	    agent {label 'node1'}
       steps {
         echo "This is stage 2" 
         sh 'sleep 5; exit 0'
@@ -22,6 +22,7 @@ pipeline {
     }  
     
     stage ('STAGE3') {
+	    agent {label 'node1'}
       steps {
         echo "This is stage3" 
         sh 'sleep 5; exit 0'
