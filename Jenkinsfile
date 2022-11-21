@@ -12,6 +12,7 @@ pipeline {
       }  
     } 
    stage ('PARALLEL STAGES 2 & 3') {
+	   agent node1
     parallel {
     stage ('STAGE2') {
       steps {
