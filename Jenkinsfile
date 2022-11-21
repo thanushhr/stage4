@@ -15,9 +15,6 @@ pipeline {
     parallel {
     stage ('STAGE2') {
 	    agent {label 'node1'}
-	    environment {
-		$BUILD_NUMBER
-	}
       steps {
         echo "This is stage 2" 
 	echo $BUILD_NUMBER
@@ -27,9 +24,6 @@ pipeline {
     
     stage ('STAGE3') {
 	    agent {label 'node1'}
-	    environment {
-		$BUILD_NUMBER
-	}
       steps {
         echo "This is stage3" 
 	echo $BUILD_NUMBER
