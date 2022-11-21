@@ -12,7 +12,7 @@ pipeline {
       }  
     } 
    stage ('PARALLEL STAGES 2 & 3') {
-    agent label
+	   agent { label 'node1' }
     parallel {
     stage ('STAGE2') {
       steps {
